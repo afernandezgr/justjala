@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_comments_heights">24dp</dimen>
+    <dimen name="fontSizeTableName">24dp</dimen>
+    <dimen name="fontSizeIconPlus">24dp</dimen>
+    <dimen name="fontSizeBill">30dp</dimen>
+    <dimen name="fontSizeSelectTable">20dp</dimen>
+</resources>
