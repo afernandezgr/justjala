@@ -27,16 +27,26 @@ class ListCommadsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_commands)
 
+        val indexTable = intent.getIntExtra(EXTRA_TABLE_INDEX, 0)
+
         if (supportFragmentManager.findFragmentById(R.id.list_commands_fragment)== null) {
-            val fragment = ListCommandFragment.newInstance(intent.getIntExtra(EXTRA_TABLE_INDEX, 0))
+            val fragment = ListCommandFragment.newInstance(indexTable)
             supportFragmentManager.beginTransaction()
                     .add(R.id.list_commands_fragment, fragment)
                     .commit()
         }
 
         //Actualizamos la interfaz
-        tableName.text = Tables[intent.getIntExtra(EXTRA_TABLE_INDEX, 0)].name
-        tableBill.text = Tables[intent.getIntExtra(EXTRA_TABLE_INDEX, 0)].getBill().toString()
+        tableName.text = Tables[indexTable].name
+        tableBill.text = Tables[indexTable].getBill().toString()
 
+
+        buttonAddDish.setOnClickListener{
+
+            val intent = ListDishesActivity.intent(this,
+                    indexTable)
+            startActivity(intent)
+
+        }
     }
 }

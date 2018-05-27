@@ -50,29 +50,3 @@ class ListTablesRecyclerViewAdapter: RecyclerView.Adapter<ListTablesRecyclerView
     }
 }
 
-
-/*
-
-class ListTablesAdapter: RecyclerView.Adapter<CustomViewHolderTable>() {
-
-
-    override fun getItemCount(): Int {
-        return Tables.count
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolderTable {
-        val layoutInflater = LayoutInflater.from(parent?.context)
-        val cellForRow = layoutInflater.inflate(R.layout.table_row, parent, false)
-        return CustomViewHolderTable(cellForRow)
-    }
-
-    override fun onBindViewHolder(holder: CustomViewHolderTable, position: Int) {
-        holder?.itemView?.idTableName?.text = Tables[position].name
-        holder?.itemView?.idTableBill?.text = String.format("%s $",Tables[position].bill.toString(),R.string.currency)
-
-    }
-}
-
-class CustomViewHolderTable(val itemView: View): RecyclerView.ViewHolder(itemView) {
-
-}*/

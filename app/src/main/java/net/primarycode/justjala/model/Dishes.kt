@@ -18,6 +18,13 @@ object Dishes {
                     R.drawable.dish_paella,
                     20f,
                     arrayOf(Allergens.CEREALES,Allergens.MARISCO)
+                    ),
+            Dish("Tortilla española",
+                    "Típica comida españoal a base de patatas, huevos y cebolla",
+                    "La tortilla de patata, tortilla de patatas o tortilla española —también llamada tortilla de papas en Hispanoamérica, Canarias y Andalucía— es una tortilla (es decir, huevo batido, cuajado con aceite en la sartén)1 con patatas y, generalmente, también con cebolla. Se trata de uno de los platos más conocidos y emblemáticos de la cocina española, siendo un producto muy popular que se puede encontrar en casi cualquier bar o restaurante de España.",
+                    R.drawable.dish_tortilla,
+                    15f,
+                    arrayOf(Allergens.HUEVOS)
                     )
             )
 
