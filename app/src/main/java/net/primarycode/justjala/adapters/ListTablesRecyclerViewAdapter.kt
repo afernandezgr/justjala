@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-
 import net.primarycode.justjala.R
 import net.primarycode.justjala.model.Table
 import net.primarycode.justjala.model.Tables
@@ -44,7 +43,7 @@ class ListTablesRecyclerViewAdapter: RecyclerView.Adapter<ListTablesRecyclerView
         fun bindTable(table: Table)
         {
             tableName?.text = table.name
-            tableBill?.text = String.format("%s €", table.bill.toString())
+            tableBill?.text = String.format("%s €", table.getBill().toString())
         }
 
 

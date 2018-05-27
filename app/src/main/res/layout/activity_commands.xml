@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.OrderActivity">
+    tools:context=".activity.ListCommadsActivity">
 
     <TextView
         android:id="@+id/tableName"
@@ -17,9 +17,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView_Order"
-        android:layout_width="0dp"
+    <FrameLayout
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
@@ -27,10 +26,32 @@
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAddDish"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/tableBill"
+        tools:context=".activity.ListCommadsActivity">
+
+
+        <FrameLayout
+            android:id="@+id/list_commands_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
+    <!--<fragment
+        android:id="@+id/list_commands_fragment"
+        android:name="net.primarycode.justjala.fragment.ListCommandFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableBill" />-->
+
 
     <Button
         android:id="@+id/buttonAddDish"

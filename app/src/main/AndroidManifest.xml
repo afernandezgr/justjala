@@ -16,7 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.OrderActivity">
+        <activity android:name=".activity.ListCommadsActivity">
 
 
         </activity>
