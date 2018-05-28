@@ -19,7 +19,7 @@ object Tables {
             "Plato cuyo ingrediente principal es el arroz que se cocina con otros ingredientes como pescado, marisco, ave, carne, verduras, legumbres, etc.; es un plato típico de todas las regiones españolas, sobre todo de Valencia, variando en cada una el tipo y cantidad de ingredientes.",
             R.drawable.dish_paella,
             20f,
-            arrayOf(Allergens.CEREALES,Allergens.MARISCO)
+            arrayOf(Allergens.CEREALES,Allergens.MOLUSCOS,Allergens.CRUSTACEOS)
     )
 
     val dish3 =  Dish("Tortilla española",

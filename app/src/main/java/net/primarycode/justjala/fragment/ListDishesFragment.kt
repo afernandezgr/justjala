@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_list_dishes.*
 import net.primarycode.justjala.R
-
 import net.primarycode.justjala.activity.ListDishesActivity
 import net.primarycode.justjala.adapters.DishesRecyclerViewAdapter
 
@@ -41,6 +40,8 @@ class ListDishesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         recyclerView_dishList.layoutManager = LinearLayoutManager(activity)
 
+
+
         val tableIndex=arguments?.getInt(ListDishesActivity.EXTRA_INDEX_TABLE, 0)
         val adapter =  DishesRecyclerViewAdapter()
 
@@ -48,7 +49,4 @@ class ListDishesFragment : Fragment() {
     }
 
 
- //   fun setIndexTable(index: Int){
- //       indexTableSelected=index
- //   }
 }

@@ -43,11 +43,19 @@
             <TextView
                 android:id="@+id/idShortDescription"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/default_comments_heights"
+                android:layout_height="match_parent"
                 android:text="Description"
                 android:textSize="10sp"
                 android:textStyle="italic" />
+            <LinearLayout
+                android:id="@+id/layoutalergens"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp">
+            </LinearLayout>
         </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>

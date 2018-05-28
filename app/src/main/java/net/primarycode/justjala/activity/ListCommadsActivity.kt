@@ -18,6 +18,7 @@ class ListCommadsActivity : AppCompatActivity() {
         fun intent(context: Context, tableIndex: Int): Intent {
             val intent = Intent(context, ListCommadsActivity::class.java)
             intent.putExtra(EXTRA_TABLE_INDEX, tableIndex)
+
             return intent
         }
     }
