@@ -10,12 +10,17 @@ import kotlinx.android.synthetic.main.fragment_list_commands.*
 import net.primarycode.justjala.R
 import net.primarycode.justjala.activity.ListCommadsActivity
 import net.primarycode.justjala.adapters.CommandsRecyclerViewAdapter
+import net.primarycode.justjala.model.Command
 import net.primarycode.justjala.model.Tables
 
 class ListCommandFragment : Fragment() {
 
+    //public var adapter : CommandsRecyclerViewAdapter = CommandsRecyclerViewAdapter(arrayListOf<Command>())
+
     companion object {
         val EXTRA_TABLE_INDEX = "EXTRA_TABLE_INDEX"
+
+
 
         fun newInstance(tableIndex: Int): ListCommandFragment {
             val arguments = Bundle()
@@ -41,8 +46,6 @@ class ListCommandFragment : Fragment() {
 
         val tableIndex=arguments?.getInt(ListCommadsActivity.EXTRA_TABLE_INDEX, 0)
         val adapter =  CommandsRecyclerViewAdapter(Tables[tableIndex!!].commands)
-
-
 
         recyclerView_commandList.adapter = adapter
     }
