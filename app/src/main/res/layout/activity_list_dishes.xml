@@ -13,6 +13,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
         android:text="Select dish from list"
         android:textSize="@dimen/fontSizeTableName"
         android:textStyle="bold"

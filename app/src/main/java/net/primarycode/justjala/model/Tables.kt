@@ -32,17 +32,17 @@ object Tables {
 
     var command1 = Command(dish1, "Sin cambios")
     var command2 = Command(dish2, "Quitar gamas")
-    var table1 = Table("Mesa 1", arrayOf(command1,command2))
+    var table1 = Table("Mesa 1", arrayListOf(command1,command2))
 
 
 
     var command3 = Command(dish1, "Quitar la sopa")
-    var table2 = Table("Mesa 2", arrayOf(command3))
+    var table2 = Table("Mesa 2", arrayListOf(command3))
 
 
-    var table3 = Table("Mesa 3", arrayOf())
+    var table3 = Table("Mesa 3", arrayListOf())
 
-    private val tables : List<Table> = listOf(
+    private val tables : List<Table> = arrayListOf(
             table1,table2, table3
     )
 

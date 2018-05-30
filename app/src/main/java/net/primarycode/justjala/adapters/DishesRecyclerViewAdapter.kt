@@ -1,8 +1,7 @@
 package net.primarycode.justjala.adapters
 
-import android.support.v7.widget.AlertDialogLayout
+
 import android.support.v7.widget.RecyclerView
-import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,6 +14,7 @@ import net.primarycode.justjala.model.*
 
 class DishesRecyclerViewAdapter(): RecyclerView.Adapter<DishesRecyclerViewAdapter.DishViewHolder>() {
 
+    var onClickListener : View.OnClickListener? = null
 
     override fun getItemCount(): Int {
         return Dishes.count
@@ -23,6 +23,10 @@ class DishesRecyclerViewAdapter(): RecyclerView.Adapter<DishesRecyclerViewAdapte
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DishViewHolder {
         val layoutInflater = LayoutInflater.from(parent?.context)
         val cellForRow = layoutInflater.inflate(R.layout.dish_row, parent, false)
+
+        cellForRow.setOnClickListener {
+            onClickListener?.onClick(it)
+        }
         return DishViewHolder(cellForRow)
     }
 
@@ -34,13 +38,13 @@ class DishesRecyclerViewAdapter(): RecyclerView.Adapter<DishesRecyclerViewAdapte
     inner class DishViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val dishImage = itemView.findViewById<ImageView?>(R.id.idImgDish)
         val dishName = itemView.findViewById< TextView?>(R.id.idDishName)
-        val dishShortDescription = itemView.findViewById<TextView?>(R.id.idShortDescription)
+        //val dishShortDescription = itemView.findViewById<TextView?>(R.id.idShortDescription)
 
         fun bindCommand(dish : Dish) {
 
             dishImage?.setImageResource(dish.photo)
             dishName?.text = dish.name
-            dishShortDescription?.text = dish.shortDescription
+            //dishShortDescription?.text = dish.shortDescription
 
             val imParams: LinearLayout.LayoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
             val layoutAlergens = itemView.findViewById<LinearLayout>(R.id.layoutalergens)

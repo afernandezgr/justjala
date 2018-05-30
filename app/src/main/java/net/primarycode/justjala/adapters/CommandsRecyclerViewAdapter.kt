@@ -13,7 +13,7 @@ import net.primarycode.justjala.R
 import net.primarycode.justjala.model.*
 
 
-class CommandsRecyclerViewAdapter(private val commands: Array<Command>): RecyclerView.Adapter<CommandsRecyclerViewAdapter.CommandViewHolder>() {
+class CommandsRecyclerViewAdapter(private val commands: List<Command>): RecyclerView.Adapter<CommandsRecyclerViewAdapter.CommandViewHolder>() {
 
 
 

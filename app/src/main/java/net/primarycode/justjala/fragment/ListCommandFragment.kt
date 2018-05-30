@@ -48,7 +48,5 @@ class ListCommandFragment : Fragment() {
     }
 
 
- //   fun setIndexTable(index: Int){
- //       indexTableSelected=index
- //   }
+
 }
