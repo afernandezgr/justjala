@@ -10,13 +10,32 @@
         android:id="@+id/tableName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:text="Nombre mesa"
+        android:text="Mesa #"
+        android:textColor="@android:color/holo_blue_light"
         android:textSize="@dimen/fontSizeTableName"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonCheckTable"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="#6bbbd6"
+        android:text="Check"
+        android:textColor="@android:color/black"
+        android:textSize="10sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toStartOf="@+id/tableBill"
+        app:layout_constraintStart_toEndOf="@+id/tableName"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@android:color/holo_blue_bright" />
+
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -39,20 +58,6 @@
 
     </FrameLayout>
 
-    <!--<fragment
-        android:id="@+id/list_commands_fragment"
-        android:name="net.primarycode.justjala.fragment.ListCommandFragment"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableBill" />-->
-
 
     <Button
         android:id="@+id/buttonAddDish"
@@ -69,9 +74,9 @@
 
     <TextView
         android:id="@+id/tableBill"
-        android:layout_width="120dp"
+        android:layout_width="100dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
         android:background="@android:color/holo_purple"
         android:text="100,50€"

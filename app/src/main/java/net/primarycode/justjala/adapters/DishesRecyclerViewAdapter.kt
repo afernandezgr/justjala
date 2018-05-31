@@ -39,13 +39,13 @@ class DishesRecyclerViewAdapter(): RecyclerView.Adapter<DishesRecyclerViewAdapte
         val dishImage = itemView.findViewById<ImageView?>(R.id.idImgDish)
         val dishName = itemView.findViewById< TextView?>(R.id.idDishName)
         val dishShortDescription = itemView.findViewById<TextView?>(R.id.idShortDescription)
-
+        val dishPrize = itemView.findViewById<TextView?>(R.id.idDishPrize)
         fun bindCommand(dish : Dish) {
 
             dishImage?.setImageResource(dish.photo)
             dishName?.text = dish.name
             dishShortDescription?.text = dish.shortDescription
-
+            dishPrize?.text = dish.prize.toString() + "€"
             val imParams: LinearLayout.LayoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
             val layoutAlergens = itemView.findViewById<LinearLayout>(R.id.layoutalergens)
             var imAlergen: ImageView

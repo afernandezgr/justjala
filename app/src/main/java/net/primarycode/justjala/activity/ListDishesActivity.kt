@@ -4,8 +4,10 @@ import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_commands.*
 import net.primarycode.justjala.R
 import net.primarycode.justjala.fragment.ListDishesFragment
+import net.primarycode.justjala.model.Tables
 
 
 class ListDishesActivity : AppCompatActivity() {
@@ -20,6 +22,11 @@ class ListDishesActivity : AppCompatActivity() {
             return intent
         }
     }
+
+    val indexTable by lazy {
+        intent.getIntExtra(ListDishesActivity.EXTRA_INDEX_TABLE, 0)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_dishes)
@@ -35,4 +42,8 @@ class ListDishesActivity : AppCompatActivity() {
         }
 
     }
+
+
+
+
 }

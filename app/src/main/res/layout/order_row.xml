@@ -1,71 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@android:color/white"
-    android:orientation="horizontal">
-    <LinearLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="8dp">
-
-        <ImageView
-            android:id="@+id/idImgDish"
-            android:layout_width="60dp"
-            android:layout_height="50dp"
-            android:layout_marginRight="10dp"
-            android:src="@drawable/dish_cocido" />
-
+        android:background="@android:color/white"
+        android:orientation="horizontal">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="8dp">
 
             <TextView
                 android:id="@+id/idDishPrize"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
-                android:gravity="right|center"
-                android:text="100€"
+                android:gravity="right"
+                android:text="10€"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 tools:textColor="@android:color/holo_blue_dark"
                 android:paddingRight="8dp"/>
 
+            <ImageView
+                android:id="@+id/idImgDish"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/dish_cocido" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
-
-                <TextView
-                    android:id="@+id/idDishName"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Nombre"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:id="@+id/idDishName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nombre"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/default_text_comments"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/idDishComment"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/default_comments_heights"
+                        android:text="Comment"
+                        android:textSize="10sp"
+                        android:textStyle="italic" />
+                </LinearLayout>
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/default_text_comments"
-                    android:textSize="10sp"
-                    android:textStyle="bold" />
+                    android:id="@+id/idDishPrize"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center"
+                    android:text="10€"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    tools:textColor="@android:color/holo_blue_dark"
+                    android:paddingRight="8dp"/>
 
-                <TextView
-                    android:id="@+id/idDishComment"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/default_comments_heights"
-                    android:text="Comment"
-                    android:textSize="10sp"
-                    android:textStyle="italic" />
-            </LinearLayout>
-
-        </LinearLayout>
-        </LinearLayout>
-  </LinearLayout>
+      </LinearLayout>
+</LinearLayout>
