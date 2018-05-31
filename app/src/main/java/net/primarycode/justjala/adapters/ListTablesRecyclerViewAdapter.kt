@@ -29,9 +29,7 @@ class ListTablesRecyclerViewAdapter: RecyclerView.Adapter<ListTablesRecyclerView
 
 
     override fun onBindViewHolder(holder: TableViewHolder, position: Int) {
-
         holder.bindTable(Tables[position])
-
     }
 
 

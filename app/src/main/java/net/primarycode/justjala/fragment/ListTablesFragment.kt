@@ -18,7 +18,6 @@ class ListTablesFragment : Fragment() {
         super.onCreateView(inflater, container, savedInstanceState)
         val root=inflater?.inflate(R.layout.fragment_list_tables, container, false)
 
-
         return root!!
     }
 

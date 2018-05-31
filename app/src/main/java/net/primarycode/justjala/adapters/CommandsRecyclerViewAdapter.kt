@@ -36,12 +36,13 @@ class CommandsRecyclerViewAdapter(private val commands: List<Command>): Recycler
         val dishImage = itemView.findViewById<ImageView?>(R.id.idImgDish)
         val dishName = itemView.findViewById< TextView?>(R.id.idDishName)
         val dishComment = itemView.findViewById<TextView?>(R.id.idDishComment)
-
+        val dishPrize = itemView.findViewById<TextView?>(R.id.idDishPrize)
         fun bindCommand(command: Command) {
 
             dishImage?.setImageResource(command.dish.photo)
             dishName?.text = command.dish.name
             dishComment?.text = command.comment
+            dishPrize?.text = command.dish.prize.toString() + "€"
 
         }
     }

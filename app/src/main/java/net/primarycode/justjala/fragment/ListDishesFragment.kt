@@ -78,7 +78,7 @@ class ListDishesFragment : Fragment() {
                                     val newCommand: Command = Command(Dishes[indexDish], comment)
 
                                    Tables[indexTable!!].commands.add(newCommand)
-                                   Toast.makeText(context, Tables[indexTable].commands.size.toString(), Toast.LENGTH_LONG).show()
+                                   Toast.makeText(context, "New dish added: " + Dishes[indexDish].name + " with comment: " + comment, Toast.LENGTH_LONG).show()
                                  }
         }
     }

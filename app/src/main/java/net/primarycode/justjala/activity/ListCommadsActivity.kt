@@ -7,8 +7,6 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_commands.*
 import kotlinx.android.synthetic.main.fragment_list_commands.*
 import net.primarycode.justjala.R
-import net.primarycode.justjala.adapters.CommandsRecyclerViewAdapter
-import net.primarycode.justjala.fragment.CustomizeDishDialogFragment
 import net.primarycode.justjala.fragment.ListCommandFragment
 import net.primarycode.justjala.model.Tables
 
@@ -35,7 +33,6 @@ class ListCommadsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_commands)
 
-//        val indexTable = intent.getIntExtra(EXTRA_TABLE_INDEX, 0)
 
         if (supportFragmentManager.findFragmentById(R.id.list_commands_fragment)== null) {
             val fragment = ListCommandFragment.newInstance(indexTable)
@@ -45,8 +42,6 @@ class ListCommadsActivity : AppCompatActivity() {
         }
 
         //Actualizamos la interfaz
-        //tableName.text = Tables[indexTable].name
-        //tableBill.text = Tables[indexTable].getBill().toString()
         updateActivityCommands()
 
         buttonAddDish.setOnClickListener{
@@ -62,11 +57,7 @@ class ListCommadsActivity : AppCompatActivity() {
         super.onRestart()
 
         updateActivityCommands()
-        //val commandsfragment = supportFragmentManager.findFragmentById(R.id.list_commands_fragment)
 
-        //if (commandsfragment != null) {
-        //    commandsfragment.recyclerView_commandList.adapter.notifyDataSetChanged()
-        //}
     }
 
     fun updateActivityCommands(){

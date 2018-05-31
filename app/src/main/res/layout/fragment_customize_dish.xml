@@ -51,6 +51,8 @@
                 android:id="@+id/idLongDescriptionDetail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:maxLines="5"
+                android:scrollbars="vertical"
                 android:text="Description"
                 android:textSize="10sp"
                 android:textStyle="italic" />

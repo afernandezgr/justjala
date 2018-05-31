@@ -38,13 +38,13 @@ class DishesRecyclerViewAdapter(): RecyclerView.Adapter<DishesRecyclerViewAdapte
     inner class DishViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val dishImage = itemView.findViewById<ImageView?>(R.id.idImgDish)
         val dishName = itemView.findViewById< TextView?>(R.id.idDishName)
-        //val dishShortDescription = itemView.findViewById<TextView?>(R.id.idShortDescription)
+        val dishShortDescription = itemView.findViewById<TextView?>(R.id.idShortDescription)
 
         fun bindCommand(dish : Dish) {
 
             dishImage?.setImageResource(dish.photo)
             dishName?.text = dish.name
-            //dishShortDescription?.text = dish.shortDescription
+            dishShortDescription?.text = dish.shortDescription
 
             val imParams: LinearLayout.LayoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
             val layoutAlergens = itemView.findViewById<LinearLayout>(R.id.layoutalergens)
