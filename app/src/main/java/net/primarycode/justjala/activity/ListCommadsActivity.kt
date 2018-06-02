@@ -5,6 +5,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
+import android.view.MenuItem
 import android.widget.EditText
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_commands.*
@@ -37,6 +38,7 @@ class ListCommadsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_commands)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         if (supportFragmentManager.findFragmentById(R.id.list_commands_fragment)== null) {
             val fragment = ListCommandFragment.newInstance(indexTable)
@@ -49,11 +51,9 @@ class ListCommadsActivity : AppCompatActivity() {
         updateActivityCommands()
 
         buttonAddDish.setOnClickListener{
-
             val intent = ListDishesActivity.intent(this,
                     indexTable)
             startActivity(intent)
-
         }
 
 
@@ -62,7 +62,7 @@ class ListCommadsActivity : AppCompatActivity() {
            // val edit = customView.findViewById<EditText?>(R.id.city_name)
             AlertDialog.Builder(this)
                     .setTitle("Generate bill")
-                    .setMessage("Do you want the bill for the table " + Tables[indexTable].name + " amount: "+ Tables[indexTable].getBill().toString() + "€")
+                    .setMessage("Please confirm if you want the bill for the table: \n" + Tables[indexTable].name + "\nAmount: "+ Tables[indexTable].getBill().toString() + "€")
                     .setPositiveButton(android.R.string.ok, { _, _ ->
 
                         Tables[indexTable].commands.clear()
@@ -74,12 +74,19 @@ class ListCommadsActivity : AppCompatActivity() {
                         }
 
                         updateActivityCommands()
-                       // Snackbar.make(findViewById(android.R.id.content), edit?.text.toString(), Snackbar.LENGTH_LONG)
-                       //         .show()
+
                     })
                     .setNegativeButton(android.R.string.cancel, null)
                     .show()
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?) = when (item?.itemId) {
+        android.R.id.home -> {
+            finish()
+            true
+        }
+        else -> super.onOptionsItemSelected(item)
     }
 
     override fun onRestart() {

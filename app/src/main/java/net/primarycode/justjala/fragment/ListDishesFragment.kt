@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.support.v4.app.Fragment
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
@@ -21,17 +22,19 @@ import net.primarycode.justjala.model.Tables
 class ListDishesFragment : Fragment() {
 
     companion object {
-        val EXTRA_TABLE_INDEX = "EXTRA_TABLE_INDEX"
+        val ARG_TABLE_INDEX = "ARG_TABLE_INDEX"
 
         fun newInstance(tableIndex: Int): ListDishesFragment {
             val arguments = Bundle()
-            arguments.putInt(ListDishesActivity.EXTRA_INDEX_TABLE, tableIndex)
+            arguments.putInt(ARG_TABLE_INDEX, tableIndex)
             val fragment = ListDishesFragment()
             fragment.arguments = arguments
 
             return fragment
         }
     }
+
+    val indexTable =arguments?.getInt(ARG_TABLE_INDEX,0)
 
 
     val REQUEST_COMMENTS = 1
@@ -71,14 +74,20 @@ class ListDishesFragment : Fragment() {
 
         when (requestCode) {
          REQUEST_COMMENTS -> if (resultCode == Activity.RESULT_OK && data != null) {
-                                    val comment = data.getStringExtra(CustomizeDishDialogFragment.DISH_COMMENT) as String
+                                    var comment = data.getStringExtra(CustomizeDishDialogFragment.DISH_COMMENT) as String
                                     val indexDish = data.getIntExtra(CustomizeDishDialogFragment.DISH_INDEX,0)
                                     val indexTable = arguments?.getInt(ListDishesActivity.EXTRA_INDEX_TABLE, 0)
 
+                                    if (comment == ""){
+                                        comment = "No comments"
+                                    }
+                                    //generate the new command
                                     val newCommand: Command = Command(Dishes[indexDish], comment)
 
+                                    //add this command in table we're working
                                    Tables[indexTable!!].commands.add(newCommand)
-                                   Toast.makeText(context, "New dish added: " + Dishes[indexDish].name + " with comment: " + comment, Toast.LENGTH_LONG).show()
+                                    //show the user the add has been include in the bill of the table
+                                    Snackbar.make(view!!,"New dish added: " + Dishes[indexDish].name + " with comment '" + comment + "'",Snackbar.LENGTH_LONG).show()
                                  }
         }
     }

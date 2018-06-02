@@ -51,5 +51,9 @@ class ListCommandFragment : Fragment() {
     }
 
 
+    fun moveToTable(indexTable : Int){
+        val adapter =  CommandsRecyclerViewAdapter(Tables[indexTable!!].commands)
 
+        recyclerView_commandList.adapter = adapter
+    }
 }

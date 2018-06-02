@@ -34,6 +34,10 @@
         app:layout_constraintEnd_toStartOf="@+id/tableBill"
         app:layout_constraintStart_toEndOf="@+id/tableName"
         app:layout_constraintTop_toTopOf="parent"
+        android:shadowColor="@color/cardview_dark_background"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="3"
         tools:background="@android:color/holo_blue_bright" />
 
 
@@ -63,14 +67,15 @@
         android:id="@+id/buttonAddDish"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginTop="8dp"
         android:layout_marginRight="8dp"
-        android:background="@android:color/holo_blue_dark"
+        android:layout_marginTop="8dp"
+        android:background="#0ae7cd"
         android:text="+"
         android:textSize="@dimen/fontSizeIconPlus"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+       />
 
     <TextView
         android:id="@+id/tableBill"

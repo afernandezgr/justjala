@@ -4,10 +4,10 @@ import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_commands.*
+import android.view.MenuItem
 import net.primarycode.justjala.R
 import net.primarycode.justjala.fragment.ListDishesFragment
-import net.primarycode.justjala.model.Tables
+
 
 
 class ListDishesActivity : AppCompatActivity() {
@@ -32,6 +32,8 @@ class ListDishesActivity : AppCompatActivity() {
         setContentView(R.layout.activity_list_dishes)
 
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         val indexTable = intent.getIntExtra(ListDishesActivity.EXTRA_INDEX_TABLE, 0)
 
         if (supportFragmentManager.findFragmentById(R.id.list_dishes_fragment)== null) {
@@ -43,7 +45,13 @@ class ListDishesActivity : AppCompatActivity() {
 
     }
 
-
+    override fun onOptionsItemSelected(item: MenuItem?) = when (item?.itemId) {
+        android.R.id.home -> {
+            finish()
+            true
+        }
+        else -> super.onOptionsItemSelected(item)
+    }
 
 
 }

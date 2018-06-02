@@ -4,7 +4,7 @@ import net.primarycode.justjala.R
 
 
 
-object Tables {
+object Tables { //Singleton
 
     val dish1 =  Dish("Cocido madrileño",
             "Típica comida madrileña a base de garbanzos",
