@@ -3,4 +3,6 @@
     <string name="currency">euros</string>
     <string name="default_text_comments">Comments of client:</string>
     <string name="label_select_table">Please select table</string>
+    <string name="button_check_text">Check</string>
+    <string name="button_adddish_text">+</string>
 </resources>

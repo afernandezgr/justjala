@@ -5,4 +5,6 @@
     <dimen name="fontSizeIconPlus">24dp</dimen>
     <dimen name="fontSizeBill">30dp</dimen>
     <dimen name="fontSizeSelectTable">18sp</dimen>
+    <dimen name="button_check_size">10sp</dimen>
+    <dimen name="button_adddish_size">30sp</dimen>
 </resources>

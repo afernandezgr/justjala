@@ -60,16 +60,7 @@
                         android:textStyle="italic" />
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/idDishPrize"
-                    android:layout_width="80dp"
-                    android:layout_height="match_parent"
-                    android:gravity="right|center"
-                    android:text="10€"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    tools:textColor="@android:color/holo_blue_dark"
-                    android:paddingRight="8dp"/>
+
 
       </LinearLayout>
 </LinearLayout>

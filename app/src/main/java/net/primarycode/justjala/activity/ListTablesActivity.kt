@@ -1,5 +1,6 @@
 package net.primarycode.justjala.activity
 
+import android.content.res.Configuration
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
@@ -53,6 +54,13 @@ class ListTablesActivity : AppCompatActivity(), ListTablesFragment.OnTableClicke
 
     }
 
+    override fun onConfigurationChanged(newConfig: Configuration?) {
+        super.onConfigurationChanged(newConfig)
+        if (newConfig?.orientation == Configuration.ORIENTATION_PORTRAIT) {
+            supportFragmentManager.popBackStack()
+        }
+    }
+
     override fun onRestart() {
         super.onRestart()
 
@@ -75,7 +83,7 @@ class ListTablesActivity : AppCompatActivity(), ListTablesFragment.OnTableClicke
 
         val commandsFragment = supportFragmentManager.findFragmentById(R.id.list_commands_fragment) as? ListCommandFragment
 
-        if (commandsFragment != null){
+        if (commandsFragment != null && (getResources().configuration.orientation == Configuration.ORIENTATION_LANDSCAPE)){
             commandsFragment.moveToTable(indexTableClicked)
             val buttonsfragment = supportFragmentManager.findFragmentById(R.id.buttons_commands_fragment) as? ButtonCommandsFragment
             if (buttonsfragment != null) {
