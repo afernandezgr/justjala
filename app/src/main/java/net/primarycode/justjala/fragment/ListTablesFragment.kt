@@ -10,8 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_list_tables.*
 import net.primarycode.justjala.R
-import net.primarycode.justjala.activity.ListCommadsActivity
-import net.primarycode.justjala.activity.ListDishesActivity
 import net.primarycode.justjala.adapters.ListTablesRecyclerViewAdapter
 
 

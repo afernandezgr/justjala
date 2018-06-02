@@ -5,12 +5,14 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.ViewGroup
+import kotlinx.android.synthetic.main.fragment_list_tables.*
 import net.primarycode.justjala.R
 import net.primarycode.justjala.fragment.ListDishesFragment
+import net.primarycode.justjala.fragment.ListTablesFragment
 
 
-
-class ListDishesActivity : AppCompatActivity() {
+class ListDishesActivity : AppCompatActivity(), ListDishesFragment.OnDishAddedListener {
 
 
     companion object {
@@ -34,7 +36,14 @@ class ListDishesActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        val indexTable = intent.getIntExtra(ListDishesActivity.EXTRA_INDEX_TABLE, 0)
+        if (findViewById<ViewGroup>(R.id.list_tables_fragment)!=null){
+            if (supportFragmentManager.findFragmentById(R.id.list_tables_fragment)== null) {
+                val fragment = ListTablesFragment.newInstance()
+                supportFragmentManager.beginTransaction()
+                        .add(R.id.list_tables_fragment, fragment)
+                        .commit()
+            }
+        }
 
         if (supportFragmentManager.findFragmentById(R.id.list_dishes_fragment)== null) {
             val fragment = ListDishesFragment.newInstance(indexTable)
@@ -53,5 +62,15 @@ class ListDishesActivity : AppCompatActivity() {
         else -> super.onOptionsItemSelected(item)
     }
 
+
+    override fun onDishAdded(){
+
+        //Refrescamos lista de tablas con el número amount indicando el nuevo plato añadido
+
+        val commandsfragment = supportFragmentManager.findFragmentById(R.id.list_tables_fragment)
+        if (commandsfragment != null) {
+            commandsfragment.recyclerView_tableList.adapter.notifyDataSetChanged()
+        }
+    }
 
 }

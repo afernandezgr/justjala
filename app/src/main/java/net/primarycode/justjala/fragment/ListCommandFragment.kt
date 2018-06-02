@@ -15,21 +15,25 @@ import net.primarycode.justjala.model.Tables
 
 class ListCommandFragment : Fragment() {
 
-    //public var adapter : CommandsRecyclerViewAdapter = CommandsRecyclerViewAdapter(arrayListOf<Command>())
+
 
     companion object {
-        val EXTRA_TABLE_INDEX = "EXTRA_TABLE_INDEX"
+        val ARG_TABLE_INDEX = "ARG_TABLE_INDEX"
 
 
 
         fun newInstance(tableIndex: Int): ListCommandFragment {
             val arguments = Bundle()
-            arguments.putInt(ListCommadsActivity.EXTRA_TABLE_INDEX, tableIndex)
+            arguments.putInt(ARG_TABLE_INDEX, tableIndex)
             val fragment = ListCommandFragment()
             fragment.arguments = arguments
 
             return fragment
         }
+    }
+
+    val indexTable by lazy {
+        arguments?.getInt(ListDishesFragment.ARG_TABLE_INDEX,0)
     }
 
 

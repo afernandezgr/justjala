@@ -7,7 +7,7 @@
     android:padding="16dp"
     tools:context=".activity.ListTablesActivity">
 
-    <TextView
+<!--    <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,7 +19,7 @@
         android:textSize="@dimen/fontSizeSelectTable"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />-->
 
     <fragment
         android:id="@+id/list_tables_fragment"

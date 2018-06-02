@@ -6,21 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".activity.ListDishesActivity">
 
-    <TextView
-        android:id="@+id/labelListDishes"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Please select dish"
-        android:textColor="@android:color/holo_blue_light"
-        android:textSize="@dimen/fontSizeTableName"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
 
     <FrameLayout
         android:layout_width="0dp"
@@ -33,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelListDishes"
+        app:layout_constraintTop_toTopOf="parent"
         tools:context=".activity.ListDishesActivity">
 
 

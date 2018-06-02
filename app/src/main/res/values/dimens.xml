@@ -4,5 +4,5 @@
     <dimen name="fontSizeTableName">18dp</dimen>
     <dimen name="fontSizeIconPlus">24dp</dimen>
     <dimen name="fontSizeBill">30dp</dimen>
-    <dimen name="fontSizeSelectTable">20sp</dimen>
+    <dimen name="fontSizeSelectTable">18sp</dimen>
 </resources>

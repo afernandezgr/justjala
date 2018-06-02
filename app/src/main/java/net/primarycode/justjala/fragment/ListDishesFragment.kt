@@ -2,6 +2,7 @@ package net.primarycode.justjala.fragment
 
 import android.app.Activity
 import android.content.Intent
+import android.content.Context
 import android.support.v4.app.Fragment
 import android.os.Bundle
 import android.support.design.widget.Snackbar
@@ -21,6 +22,8 @@ import net.primarycode.justjala.model.Tables
 
 class ListDishesFragment : Fragment() {
 
+    private var onDishAddedListener: OnDishAddedListener? = null
+
     companion object {
         val ARG_TABLE_INDEX = "ARG_TABLE_INDEX"
 
@@ -34,7 +37,11 @@ class ListDishesFragment : Fragment() {
         }
     }
 
-    val indexTable =arguments?.getInt(ARG_TABLE_INDEX,0)
+
+
+    val indexTable by lazy {
+        arguments?.getInt(ARG_TABLE_INDEX,0)
+    }
 
 
     val REQUEST_COMMENTS = 1
@@ -50,6 +57,7 @@ class ListDishesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         recyclerView_dishList.layoutManager = LinearLayoutManager(activity)
 
+        labelDishTable.text = "Please select  new dish for table " + Tables[indexTable!!].name
 
 
         val tableIndex=arguments?.getInt(ListDishesActivity.EXTRA_INDEX_TABLE, 0)
@@ -74,9 +82,9 @@ class ListDishesFragment : Fragment() {
 
         when (requestCode) {
          REQUEST_COMMENTS -> if (resultCode == Activity.RESULT_OK && data != null) {
-                                    var comment = data.getStringExtra(CustomizeDishDialogFragment.DISH_COMMENT) as String
-                                    val indexDish = data.getIntExtra(CustomizeDishDialogFragment.DISH_INDEX,0)
-                                    val indexTable = arguments?.getInt(ListDishesActivity.EXTRA_INDEX_TABLE, 0)
+                                    var comment = data.getStringExtra(CustomizeDishDialogFragment.ARG_DISH_COMMENT) as String
+                                    val indexDish = data.getIntExtra(CustomizeDishDialogFragment.ARG_DISH_INDEX,0)
+                                    //val indexTable = arguments?.getInt(ListDishesActivity.ARG_INDEX_TABLE, 0)
 
                                     if (comment == ""){
                                         comment = "No comments"
@@ -88,8 +96,39 @@ class ListDishesFragment : Fragment() {
                                    Tables[indexTable!!].commands.add(newCommand)
                                     //show the user the add has been include in the bill of the table
                                     Snackbar.make(view!!,"New dish added: " + Dishes[indexDish].name + " with comment '" + comment + "'",Snackbar.LENGTH_LONG).show()
+                                    onDishAddedListener?.onDishAdded()
+
                                  }
         }
+    }
+
+
+    override fun onAttach(context: Context?) {
+        super.onAttach(context)
+        commonAttach(context as? Activity)
+    }
+
+    override fun onAttach(activity: Activity?) {
+        super.onAttach(activity)
+        commonAttach(activity)
+    }
+
+    fun commonAttach(activity: Activity?) {
+        if (activity is OnDishAddedListener) {
+            onDishAddedListener = activity
+        }
+        else {
+            onDishAddedListener = null
+        }
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        onDishAddedListener = null
+    }
+
+    interface OnDishAddedListener {
+        fun onDishAdded()
     }
 
 }

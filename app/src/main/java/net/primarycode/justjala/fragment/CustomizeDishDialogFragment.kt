@@ -19,12 +19,12 @@ class CustomizeDishDialogFragment: DialogFragment() {
 
     companion object {
 
-        val DISH_INDEX = "DISH_INDEX"
-        val DISH_COMMENT = "DISH_COMMENT"
+        val ARG_DISH_INDEX = "ARG_DISH_INDEX"
+        val ARG_DISH_COMMENT = "ARG_DISH_COMMENT"
         fun newInstance(dishIndex: Int): CustomizeDishDialogFragment {
             val arguments = Bundle()
-            arguments.putInt(DISH_INDEX, dishIndex)
-            arguments.putString(DISH_COMMENT, "No changes")
+            arguments.putInt(ARG_DISH_INDEX, dishIndex)
+            arguments.putString(ARG_DISH_COMMENT, "No changes")
 
             val dialog = CustomizeDishDialogFragment()
             dialog.arguments = arguments
@@ -34,7 +34,7 @@ class CustomizeDishDialogFragment: DialogFragment() {
     }
 
     val dishIndex by lazy {
-        arguments?.getInt(DISH_INDEX,0)
+        arguments?.getInt(ARG_DISH_INDEX,0)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -98,8 +98,8 @@ class CustomizeDishDialogFragment: DialogFragment() {
         // Creamos los datos de regreso, en este caso las unidades elegidas
         val returnIntent = Intent()
 
-        returnIntent.putExtra(DISH_INDEX, dishIndex)
-        returnIntent.putExtra(DISH_COMMENT, idDishCommentDetail.text.toString())
+        returnIntent.putExtra(ARG_DISH_INDEX, dishIndex)
+        returnIntent.putExtra(ARG_DISH_COMMENT, idDishCommentDetail.text.toString())
 
         // Lo mismo que en cancel, pero devolviendo datos
         targetFragment?.onActivityResult(targetRequestCode, Activity.RESULT_OK, returnIntent)
