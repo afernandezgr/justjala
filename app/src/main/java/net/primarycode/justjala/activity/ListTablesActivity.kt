@@ -65,25 +65,27 @@ class ListTablesActivity : AppCompatActivity(), ListTablesFragment.OnTableClicke
 
         val buttonsfragment = supportFragmentManager.findFragmentById(R.id.buttons_commands_fragment) as? ButtonCommandsFragment
         if (buttonsfragment != null) {
-            buttonsfragment.updateActivityCommands(0)
+            buttonsfragment.updateActivityCommands(buttonsfragment.arguments?.getInt(ButtonCommandsFragment.ARG_TABLE_INDEX,0)!!)
         }
 
 
     }
 
-    override fun onTableClicked(indexTable: Int) {
+    override fun onTableClicked(indexTableClicked: Int) {
 
         val commandsFragment = supportFragmentManager.findFragmentById(R.id.list_commands_fragment) as? ListCommandFragment
 
         if (commandsFragment != null){
-            commandsFragment.moveToTable(indexTable)
+            commandsFragment.moveToTable(indexTableClicked)
             val buttonsfragment = supportFragmentManager.findFragmentById(R.id.buttons_commands_fragment) as? ButtonCommandsFragment
             if (buttonsfragment != null) {
-                buttonsfragment.updateActivityCommands(indexTable)
+                buttonsfragment.updateActivityCommands(indexTableClicked)
+                //buttonsfragment.setValueIndexTable(indexTableClicked)
+
             }
         }
         else{
-            startActivity(ListCommadsActivity.intent(this, indexTable))
+            startActivity(ListCommadsActivity.intent(this, indexTableClicked))
         }
 
     }

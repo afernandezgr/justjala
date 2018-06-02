@@ -48,9 +48,7 @@ class ListCommandFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         recyclerView_commandList.layoutManager = LinearLayoutManager(activity)
 
-        val tableIndex=arguments?.getInt(ListCommadsActivity.EXTRA_TABLE_INDEX, 0)
-        val adapter =  CommandsRecyclerViewAdapter(Tables[tableIndex!!].commands)
-
+        val adapter =  CommandsRecyclerViewAdapter(Tables[arguments?.getInt(ListDishesFragment.ARG_TABLE_INDEX,0)!!].commands)
         recyclerView_commandList.adapter = adapter
     }
 

@@ -51,14 +51,14 @@ class ButtonCommandsFragment : Fragment(){
 
         buttonAddDish.setOnClickListener{
 
-            onButtonsCommandListener?.onAddDishClicked(indexTable!!)
+            onButtonsCommandListener?.onAddDishClicked(arguments?.getInt(ARG_TABLE_INDEX,0)!!)
 
         }
 
 
         buttonCheckTable.setOnClickListener {
 
-            onButtonsCommandListener?.onGenerateBillClicked(indexTable!!)
+            onButtonsCommandListener?.onGenerateBillClicked(arguments?.getInt(ARG_TABLE_INDEX,0)!!)
 
         }
 
@@ -91,8 +91,14 @@ class ButtonCommandsFragment : Fragment(){
     public fun updateActivityCommands(indexTable: Int){
 
         //Actualizamos la interfaz
+
         tableName.text = Tables[indexTable!!].name
         tableBill.text = Tables[indexTable!!].getBill().toString()
+        arguments?.putInt(ARG_TABLE_INDEX,indexTable)
+    }
+
+    public fun setValueIndexTable(indexTableNew: Int){
+        arguments?.putInt(ARG_TABLE_INDEX,indexTableNew)
     }
 
     interface OnButtonsCommandListener {

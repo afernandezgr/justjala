@@ -67,9 +67,9 @@ class ListDishesActivity : AppCompatActivity(), ListDishesFragment.OnDishAddedLi
 
         //Refrescamos lista de tablas con el número amount indicando el nuevo plato añadido
 
-        val commandsfragment = supportFragmentManager.findFragmentById(R.id.list_tables_fragment)
-        if (commandsfragment != null) {
-            commandsfragment.recyclerView_tableList.adapter.notifyDataSetChanged()
+        val tablesFragment = supportFragmentManager.findFragmentById(R.id.list_tables_fragment)
+        if (tablesFragment != null) {
+            tablesFragment.recyclerView_tableList.adapter.notifyDataSetChanged()
         }
     }
 

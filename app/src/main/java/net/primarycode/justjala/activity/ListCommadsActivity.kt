@@ -39,7 +39,7 @@ class ListCommadsActivity : AppCompatActivity(), ButtonCommandsFragment.OnButton
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         if (supportFragmentManager.findFragmentById(R.id.buttons_commands_fragment) == null) {
-            val fragment = ButtonCommandsFragment.newInstance(indexTable)
+            val fragment = ButtonCommandsFragment.newInstance(intent.getIntExtra(EXTRA_TABLE_INDEX, 0))
             supportFragmentManager.beginTransaction()
                     .add(R.id.buttons_commands_fragment, fragment)
                     .commit()
@@ -47,44 +47,13 @@ class ListCommadsActivity : AppCompatActivity(), ButtonCommandsFragment.OnButton
 
 
         if (supportFragmentManager.findFragmentById(R.id.list_commands_fragment)== null) {
-            val fragment = ListCommandFragment.newInstance(indexTable)
+            val fragment = ListCommandFragment.newInstance(intent.getIntExtra(EXTRA_TABLE_INDEX, 0))
             supportFragmentManager.beginTransaction()
                     .add(R.id.list_commands_fragment, fragment)
                     .commit()
         }
 
-        //Actualizamos la interfaz
-    /*    updateActivityCommands()
 
-        buttonAddDish.setOnClickListener{
-            val intent = ListDishesActivity.intent(this,
-                    indexTable)
-            startActivity(intent)
-        }
-
-
-        buttonCheckTable.setOnClickListener {
-           // val customView = layoutInflater.inflate(R.layout.view_cityinput, null)
-           // val edit = customView.findViewById<EditText?>(R.id.city_name)
-            AlertDialog.Builder(this)
-                    .setTitle("Generate bill")
-                    .setMessage("Please confirm if you want the bill for the table: \n" + Tables[indexTable].name + "\nAmount: "+ Tables[indexTable].getBill().toString() + "€")
-                    .setPositiveButton(android.R.string.ok, { _, _ ->
-
-                        Tables[indexTable].commands.clear()
-                        Toast.makeText(this, "Bill generated for table " + Tables[indexTable].name, Toast.LENGTH_LONG).show()
-
-                        val commandsfragment = supportFragmentManager.findFragmentById(R.id.list_commands_fragment)
-                        if (commandsfragment != null) {
-                            commandsfragment.recyclerView_commandList.adapter.notifyDataSetChanged()
-                        }
-
-                        updateActivityCommands()
-
-                    })
-                    .setNegativeButton(android.R.string.cancel, null)
-                    .show()
-        }*/
     }
 
     override fun onOptionsItemSelected(item: MenuItem?) = when (item?.itemId) {
@@ -111,12 +80,6 @@ class ListCommadsActivity : AppCompatActivity(), ButtonCommandsFragment.OnButton
 
     }
 
-/*    fun updateActivityCommands(){
-
-        //Actualizamos la interfaz
-        tableName.text = Tables[indexTable].name
-        tableBill.text = Tables[indexTable].getBill().toString()
-    }*/
 
     override fun onAddDishClicked(indexTable: Int){
 
