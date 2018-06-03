@@ -30,6 +30,22 @@ object Tables { //Singleton
              arrayOf(Allergens.HUEVOS)
     )
 
+    val dish4 =  Dish("Salpicon de marisco",
+            "Receta típica de la cocina mediterránea a base de distintos tipos de marisco",
+            "El salpicón era un plato generalmente hecho de diferentes carnes picadas al que se le añadía pimienta, sal, vinagre y diversas verduras. Se servía caliente aderezado con una vinagreta. Hoy en día es un plato propio de la costa andaluza que se sirve mucho en los bares de España",
+            R.drawable.dish_salpicon,
+            30f,
+            arrayOf(Allergens.MOLUSCOS, Allergens.CRUSTACEOS)
+    )
+
+    val dish5 =  Dish("Wok de verdudas",
+            "Plato asiatico tipo consiste en distintos tipos de verduras troceados salteados con aceite y soja",
+            "Cocinar con un wok es una forma de preparar platos muy saludables, ya que apenas empleamos un chorrito de aceite para cocinar los ingredientes de la receta, y estos se cocinan a gran temperatura, lo que hace que en poco tiempo estén listos para comer. Podemos cocinar muchos tipos de ingredientes, aunque los más conocidos son las verduras, de casi cualquier tipo, la carne de pollo, el arroz, las gambas o langostinos, los fideos… pero es importante que los que se trocean estén cortados en tiras que no sean gruesas, en forma de bastoncito",
+            R.drawable.dish_wok,
+            18f,
+            arrayOf(Allergens.CEREALES)
+    )
+
     var command1 = Command(dish1, "Sin cambios")
     var command2 = Command(dish2, "Quitar gamas")
     var table1 = Table("Mesa 1", arrayListOf(command1,command2))
@@ -39,11 +55,17 @@ object Tables { //Singleton
     var command3 = Command(dish1, "Quitar la sopa")
     var table2 = Table("Mesa 2", arrayListOf(command3))
 
-
     var table3 = Table("Mesa 3", arrayListOf())
 
+    var command4= Command(dish4, "Sin cebolla")
+    var table4 = Table ("Mesa 4", arrayListOf(command4))
+
+    var command5= Command(dish5, "Sin cebolla")
+    var table5 = Table ("Mesa 5", arrayListOf(command5))
+
+
     private val tables : List<Table> = arrayListOf(
-            table1,table2, table3
+            table1,table2, table3, table4, table5
     )
 
     operator fun get(index: Int) = tables[index]

@@ -25,8 +25,22 @@ object Dishes {
                     R.drawable.dish_tortilla,
                     15f,
                     arrayOf(Allergens.HUEVOS)
+                    ),
+            Dish("Salpicon de marisco",
+                    "Receta típica de la cocina mediterránea a base de distintos tipos de marisco",
+                    "El salpicón era un plato generalmente hecho de diferentes carnes picadas al que se le añadía pimienta, sal, vinagre y diversas verduras. Se servía caliente aderezado con una vinagreta. Hoy en día es un plato propio de la costa andaluza que se sirve mucho en los bares de España",
+                    R.drawable.dish_salpicon,
+                    30f,
+                    arrayOf(Allergens.MOLUSCOS, Allergens.CRUSTACEOS)
+                    ),
+            Dish("Wok de verdudas",
+                    "Plato asiatico tipo consiste en distintos tipos de verduras troceados salteados con aceite y soja",
+                    "Cocinar con un wok es una forma de preparar platos muy saludables, ya que apenas empleamos un chorrito de aceite para cocinar los ingredientes de la receta, y estos se cocinan a gran temperatura, lo que hace que en poco tiempo estén listos para comer. Podemos cocinar muchos tipos de ingredientes, aunque los más conocidos son las verduras, de casi cualquier tipo, la carne de pollo, el arroz, las gambas o langostinos, los fideos… pero es importante que los que se trocean estén cortados en tiras que no sean gruesas, en forma de bastoncito",
+                    R.drawable.dish_wok,
+                    18f,
+                    arrayOf(Allergens.CEREALES)
                     )
-            )
+    )
 
     operator fun get(index: Int) = dishes[index]
 
