@@ -43,7 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:text="Description:"
+                android:text="@string/description_text"
                 android:textSize="10sp"
                 android:textStyle="bold" />
 
@@ -54,7 +54,7 @@
                 android:maxLines="5"
                 android:scrollbars="vertical"
                 android:text="Description"
-                android:textSize="10sp"
+                android:textSize="12sp"
                 android:textStyle="italic" />
             <LinearLayout
                 android:id="@+id/layoutalergensDetail"
@@ -82,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:inputType="textMultiLine"
-                android:text="Customize your dish:"
+                android:text="@string/customize_text"
                 android:textSize="12sp"
                 android:textStyle="bold" />
 
@@ -91,7 +91,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Insert your comments"
+                android:hint="@string/customize_hint_text"
                 android:inputType="textLongMessage"
                 android:singleLine="false"
                 android:textSize="14sp" />

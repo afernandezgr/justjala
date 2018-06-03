@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
-        android:text="Please select dish"
+        android:text="@string/label_select_dish"
         android:textColor="@android:color/holo_blue_light"
         android:textSize="@dimen/fontSizeTableName"
         android:textStyle="bold"

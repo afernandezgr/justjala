@@ -41,11 +41,7 @@ class ListTablesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         recyclerView_tableList.layoutManager = LinearLayoutManager(activity)
         val adapter =  ListTablesRecyclerViewAdapter()
-      /*  adapter.onClickListener = View.OnClickListener {
-          val tableIndex = recyclerView_tableList.getChildAdapterPosition(it)
-          startActivity(ListCommadsActivity.intent(activity!!, tableIndex))
-        }*/
-        //val tableIndex = recyclerView_tableList.getChildAdapterPosition(it)
+
         adapter.onClickListener = View.OnClickListener {
             val tableIndex = recyclerView_tableList.getChildAdapterPosition(it)
             onTableClickedListener?.onTableClicked(tableIndex)

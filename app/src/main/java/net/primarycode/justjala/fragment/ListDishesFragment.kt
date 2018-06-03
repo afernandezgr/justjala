@@ -60,7 +60,7 @@ class ListDishesFragment : Fragment() {
         labelDishTable.text = "Please select  new dish for table " + Tables[indexTable!!].name
 
 
-        val tableIndex=arguments?.getInt(ListDishesActivity.EXTRA_INDEX_TABLE, 0)
+        //val tableIndex=arguments?.getInt(ListDishesActivity.EXTRA_INDEX_TABLE, 0)
         val adapter =  DishesRecyclerViewAdapter()
         recyclerView_dishList.adapter = adapter
         adapter.onClickListener = View.OnClickListener {

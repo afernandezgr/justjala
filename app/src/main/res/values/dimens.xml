@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="default_comments_heights">24dp</dimen>
-    <dimen name="fontSizeTableName">18dp</dimen>
-    <dimen name="fontSizeIconPlus">24dp</dimen>
-    <dimen name="fontSizeBill">30dp</dimen>
+    <dimen name="default_comments_heights">24sp</dimen>
+    <dimen name="fontSizeTableName">18sp</dimen>
+    <dimen name="fontSizeIconPlus">24sp</dimen>
+    <dimen name="fontSizeBill">30sp</dimen>
     <dimen name="fontSizeSelectTable">18sp</dimen>
     <dimen name="button_check_size">10sp</dimen>
     <dimen name="button_adddish_size">30sp</dimen>
