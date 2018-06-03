@@ -4,6 +4,9 @@
 
 ## Notas sobre la implementación
 
+***JustJala: Nueva app de gestión de comandas de restaurante***
+
+
 **Requisitos**
 
 
